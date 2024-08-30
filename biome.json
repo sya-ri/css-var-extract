@@ -14,5 +14,8 @@
         "indentStyle": "space",
         "indentWidth": 4,
         "ignore": ["**/package.json"]
+    },
+    "files": {
+        "ignore": [".idea/**", "dist/**", ".turbo/**"]
     }
 }

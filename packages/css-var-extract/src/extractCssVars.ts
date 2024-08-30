@@ -1,4 +1,4 @@
-type CssVars = Record<string, Record<string, string>>;
+import type { CssVars } from "./types";
 
 const extractCssVars = (css: string): CssVars => {
     const rootRegex = /:root(,(.*))?\s*\{([^}]*)}/g;

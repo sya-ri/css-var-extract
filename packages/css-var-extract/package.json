@@ -23,6 +23,9 @@
   "scripts": {
     "test": "vitest"
   },
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "devDependencies": {
     "vitest": "2.0.5"
   }

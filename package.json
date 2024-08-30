@@ -14,15 +14,17 @@
   "type": "module",
   "workspaces": ["packages/*"],
   "scripts": {
-    "check": "biome check .",
-    "fix": "biome check --write .",
-    "knip": "knip"
+    "check": "run-p check:*",
+    "check:biome": "biome check .",
+    "check:knip": "knip",
+    "fix": "biome check --write ."
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/node": "22.5.1",
     "knip": "5.27.5",
     "lefthook": "1.7.14",
+    "npm-run-all2": "6.2.2",
     "turbo": "2.1.0",
     "typescript": "5.5.4"
   },

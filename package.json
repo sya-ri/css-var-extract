@@ -12,17 +12,19 @@
   "license": "ISC",
   "author": "sya-ri",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "check": "biome check .",
-    "fix": "biome check --write ."
+    "fix": "biome check --write .",
+    "knip": "knip"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@types/node": "22.5.1",
+    "knip": "5.27.5",
     "lefthook": "1.7.14",
-    "turbo": "2.1.0"
+    "turbo": "2.1.0",
+    "typescript": "5.5.4"
   },
   "packageManager": "npm@10.8.2"
 }

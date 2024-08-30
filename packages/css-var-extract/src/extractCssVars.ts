@@ -7,10 +7,11 @@ const extractCssVars = (css: string): CssVars => {
         const root = rootRegex.exec(css);
         if (!root) break;
         const condition = root[2]?.trim() ?? "";
+        if (!root[3]) break;
         const cssVarRegex = /\s*(--[^;]*):([^;]*);?\n*/g;
         while (true) {
             const cssVar = cssVarRegex.exec(root[3]);
-            if (!cssVar) break;
+            if (!cssVar || !cssVar[1] || !cssVar[2]) break;
             const name = cssVar[1].trim();
             cssVars[name] = {
                 [condition]: cssVar[2].trim(),

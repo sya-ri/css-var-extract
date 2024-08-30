@@ -20,11 +20,12 @@
   },
   "license": "ISC",
   "author": "sya-ri",
-  "scripts": {
-    "test": "vitest"
-  },
   "exports": {
     ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
   },
   "devDependencies": {
     "vitest": "2.0.5"

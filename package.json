@@ -23,7 +23,8 @@
     "check:knip": "knip",
     "fix": "run-p fix:*",
     "fix:package-json": "sort-package-json 'package.json' 'packages/*/package.json'",
-    "fix:biome": "biome check --write ."
+    "fix:biome": "biome check --write .",
+    "build": "turbo build"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",

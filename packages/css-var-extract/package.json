@@ -1,0 +1,23 @@
+{
+  "name": "css-var-extract",
+  "version": "0.1.0",
+  "description": "Use CSS vars type-safely for CSS-in-JS",
+  "keywords": [
+    "css",
+    "css-in-js",
+    "react",
+    "typescript",
+    "codegen",
+    "generation"
+  ],
+  "homepage": "https://github.com/sya-ri/css-var-extract#readme",
+  "bugs": {
+    "url": "https://github.com/sya-ri/css-var-extract/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sya-ri/css-var-extract.git"
+  },
+  "license": "ISC",
+  "author": "sya-ri"
+}

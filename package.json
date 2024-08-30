@@ -1,0 +1,22 @@
+{
+  "name": "root",
+  "private": true,
+  "homepage": "https://github.com/sya-ri/css-var-extract#readme",
+  "bugs": {
+    "url": "https://github.com/sya-ri/css-var-extract/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sya-ri/css-var-extract.git"
+  },
+  "license": "ISC",
+  "author": "sya-ri",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "2.1.0"
+  },
+  "packageManager": "npm@10.8.2"
+}

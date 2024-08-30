@@ -19,5 +19,11 @@
     "url": "git+https://github.com/sya-ri/css-var-extract.git"
   },
   "license": "ISC",
-  "author": "sya-ri"
+  "author": "sya-ri",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "2.0.5"
+  }
 }

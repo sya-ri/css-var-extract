@@ -20,7 +20,9 @@ const generateCode = (cssVars: CssVars): string => {
                 output.push(`// ${value}`);
             }
         }
-        output.push(`export const ${name.substring(2)} = "var(${name})"`);
+        output.push(
+            `export const ${name.substring(2).replaceAll("-", "_")} = "var(${name})"`,
+        );
     }
     output.push("", "/* prettier-ignore-end */");
     return output.join("\n");

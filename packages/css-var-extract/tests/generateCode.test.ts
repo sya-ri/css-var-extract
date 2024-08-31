@@ -14,6 +14,14 @@ describe("GenerateCode", () => {
         ],
         [
             {
+                "--primary-0": {
+                    "": "#fff",
+                },
+            },
+            ["// #fff", 'export const primary_0 = "var(--primary-0)"'],
+        ],
+        [
+            {
                 "--primary": {
                     "": "#000",
                     ".light": "#fff",

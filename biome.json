@@ -16,6 +16,6 @@
         "ignore": ["**/package.json"]
     },
     "files": {
-        "ignore": [".idea/**", "dist/**", ".turbo/**"]
+        "ignore": [".idea/**", "dist/**", ".turbo/**", "cssVar.gen.ts"]
     }
 }

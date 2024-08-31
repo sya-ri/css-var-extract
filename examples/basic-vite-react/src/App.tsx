@@ -2,6 +2,7 @@ import { useState } from "react";
 import viteLogo from "/vite.svg";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import * as vars from "./cssVar.gen";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -24,11 +25,18 @@ function App() {
             <div className="card">
                 <button
                     type="button"
+                    style={{
+                        backgroundColor: vars.primary,
+                    }}
                     onClick={() => setCount((count) => count + 1)}
                 >
                     count is {count}
                 </button>
-                <p>
+                <p
+                    style={{
+                        color: vars.secondary,
+                    }}
+                >
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
             </div>

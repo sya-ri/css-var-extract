@@ -1,5 +1,5 @@
 # Examples
 
-## [basic-vite](basic-vite)
+## [basic-vite-react](basic-vite-react)
 
 Automatically generate `.ts` using the vite plugin.

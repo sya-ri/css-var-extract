@@ -19,7 +19,7 @@ function ensureImportFileExtension(content: string, extension: string) {
 
 type ViteConfigOptions = {
     srcDir: string;
-    entry: string;
+    entry: string | string[];
 };
 
 export const viteConfig = (options: ViteConfigOptions) => {

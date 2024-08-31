@@ -2,7 +2,7 @@
 
 Use CSS variables type-safely for CSS-in-JS.
 
-## Why?
+## ❓ Why?
 
 Type-safely access CSS variables created by yourself or by external component libraries from TypeScript.
 
@@ -62,7 +62,7 @@ export const messageStyle = style({
 });
 ```
 
-## Installation
+## 📦 Installation
 
 You need to configure your project's bundler to use the CssVarExtract Plugin or the CssVarExtract CLI.
 
@@ -191,7 +191,7 @@ Continuously watches the specified files and regenerates the `.ts` file as neede
 cve watch
 ```
 
-## Configuration
+## 🔧 Configuration
 
 You can create `cve.config.json` and change settings.
 If you are using a plugin, it also supports inline configuration.
@@ -214,7 +214,7 @@ If you are using a plugin, it also supports inline configuration.
 }
 ```
 
-## Acknowledgments
+## 👏 Acknowledgments
 
 This project was inspired by and references implementation patterns from the [TanStack Router](https://tanstack.com/router) package.
 We extend our gratitude to the developers and maintainers of [TanStack Router](https://tanstack.com/router) for their excellent work.

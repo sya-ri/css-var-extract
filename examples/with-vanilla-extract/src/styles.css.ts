@@ -1,8 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import * as vars from "./cssVar.gen.ts";
 
-export const buttonStyle = style({
-    backgroundColor: vars.primary,
+export const headerStyle = style({
+    color: vars.primary,
 });
 
 export const messageStyle = style({

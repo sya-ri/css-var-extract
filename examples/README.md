@@ -2,8 +2,6 @@
 
 ## [basic-rsbuild-react](basic-vite-react)
 
-Automatically generate `.ts` using the rspack plugin.
-
 ### rsbuild.config.ts
 
 ```ts
@@ -25,9 +23,28 @@ export default defineConfig({
 });
 ```
 
-## [basic-vite-react](basic-vite-react)
+### App.tsx
 
-Automatically generate `.ts` using the vite plugin.
+```tsx
+import "./App.css";
+import "./theme.css";
+import * as vars from "./cssVar.gen";
+
+const App = () => {
+    return (
+        <div className="content">
+            <h1 style={{ color: vars.primary }}>Rsbuild with React</h1>
+            <p style={{ color: vars.secondary }}>
+                Start building amazing things with Rsbuild.
+            </p>
+        </div>
+    );
+};
+
+export default App;
+```
+
+## [basic-vite-react](basic-vite-react)
 
 ### vite.config.ts
 
@@ -45,6 +62,26 @@ export default defineConfig({
         react(),
     ],
 });
+```
+
+### App.tsx
+
+```tsx
+import "./App.css";
+import * as vars from "./cssVar.gen";
+
+function App() {
+    return (
+        <div>
+            <h1 style={{ color: vars.primary }}>Vite + React</h1>
+            <p style={{ color: vars.secondary }}>
+                Edit <code>src/App.tsx</code> and save to test HMR
+            </p>
+        </div>
+    );
+}
+
+export default App;
 ```
 
 ## [with-vanilla-extract](with-vanilla-extract)
@@ -82,4 +119,24 @@ export const buttonStyle = style({
 export const messageStyle = style({
     color: vars.secondary,
 });
+```
+
+### App.tsx
+
+```tsx
+import "./App.css";
+import { headerStyle, messageStyle } from "./styles.css.ts";
+
+function App() {
+    return (
+        <div>
+            <h1 className={headerStyle}>Vite + React</h1>
+            <p className={messageStyle}>
+                Edit <code>src/App.tsx</code> and save to test HMR
+            </p>
+        </div>
+    );
+}
+
+export default App;
 ```

@@ -2,7 +2,7 @@
 
 Use CSS variables type-safely for CSS-in-JS.
 
-## ❓ Why?
+## 🤔 Why?
 
 Type-safely access CSS variables created by yourself or by external component libraries from TypeScript.
 

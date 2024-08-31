@@ -5,7 +5,7 @@
             "ignore": ["**/cssVar.gen.ts"]
         },
         "packages/css-var-extract-plugin": {
-            "ignoreDependencies": ["vite"]
+            "ignoreDependencies": ["vite", "webpack"]
         }
     }
 }

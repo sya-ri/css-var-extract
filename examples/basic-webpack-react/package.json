@@ -2,11 +2,11 @@
   "name": "basic-webpack-react",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack build"
-  },
   "type": "module",
+  "scripts": {
+    "build": "webpack build",
+    "dev": "webpack serve"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

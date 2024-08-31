@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import dtsPlugin from "vite-plugin-dts";
+import { externalizeDeps } from "vite-plugin-externalize-deps";
 
 function ensureImportFileExtension(content: string, extension: string) {
     // replace e.g. `import { foo } from './foo'` with `import { foo } from './foo.js'`
@@ -24,6 +25,7 @@ type ViteConfigOptions = {
 export const viteConfig = (options: ViteConfigOptions) => {
     return defineConfig({
         plugins: [
+            externalizeDeps(),
             dtsPlugin({
                 outDir: "dist/esm",
                 entryRoot: options.srcDir,

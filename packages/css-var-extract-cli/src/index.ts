@@ -1,5 +1,4 @@
-import * as fs from "node:fs/promises";
-import { extractCssVars, generateCode } from "css-var-extract";
+import { generator, getConfig } from "css-var-extract";
 import * as yargs from "yargs";
 
 main();
@@ -10,31 +9,21 @@ export function main() {
         .scriptName("cve")
         .usage("$0 <cmd> [args]")
         .command(
-            "generate <files...>",
-            "Generate the routes for a project",
+            "generate",
+            "Generate a TypeScript file from CSS files",
             (yargs: yargs.Argv) =>
-                yargs
-                    .positional("files", {
-                        describe: "Input css file",
-                        type: "string",
-                        array: true,
-                    })
-                    .option("output", {
-                        alias: "o",
-                        type: "string",
-                        default: "css-var.gen.ts",
-                    }),
-            async ({ files, output }: { files: string[]; output: string }) => {
-                const cssVars = await Promise.all(
-                    files
-                        .map((file) => fs.readFile(file, "utf-8"))
-                        .map((content) => content.then(extractCssVars)),
-                );
-                await fs.writeFile(
-                    output,
-                    generateCode(Object.assign({}, ...cssVars)),
-                    "utf-8",
-                );
+                yargs.option("nocreate", {
+                    describe: "Disable the creation of a config file",
+                    type: "boolean",
+                }),
+            async ({ nocreate }: { nocreate?: boolean }) => {
+                try {
+                    await generator(getConfig(nocreate));
+                    process.exit(0);
+                } catch (err) {
+                    console.error(err);
+                    process.exit(1);
+                }
             },
         )
         .strict()

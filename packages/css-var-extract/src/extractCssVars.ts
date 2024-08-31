@@ -1,6 +1,6 @@
 import type { CssVars } from "./types";
 
-const extractCssVars = (css: string): CssVars => {
+export const extractCssVars = (css: string): CssVars => {
     const rootRegex = /:root(,(.*))?\s*\{([^}]*)}/g;
     const cssVars: CssVars = {};
     while (true) {
@@ -21,5 +21,3 @@ const extractCssVars = (css: string): CssVars => {
     }
     return cssVars;
 };
-
-export default extractCssVars;

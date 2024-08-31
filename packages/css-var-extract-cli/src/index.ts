@@ -1,5 +1,6 @@
 import { generator, getConfig } from "css-var-extract";
 import * as yargs from "yargs";
+import { generate } from "./generate";
 
 main();
 
@@ -16,15 +17,7 @@ export function main() {
                     describe: "Disable the creation of a config file",
                     type: "boolean",
                 }),
-            async ({ nocreate }: { nocreate?: boolean }) => {
-                try {
-                    await generator(getConfig(nocreate));
-                    process.exit(0);
-                } catch (err) {
-                    console.error(err);
-                    process.exit(1);
-                }
-            },
+            async ({ nocreate }: { nocreate?: boolean }) => generate(nocreate),
         )
         .strict()
         .demandCommand(1)

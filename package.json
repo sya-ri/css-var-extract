@@ -27,7 +27,7 @@
     "fix:biome": "biome check --write .",
     "build": "turbo build",
     "build:clean": "rimraf **[!node_modules]/dist",
-    "publish-packages": "turbo run build check && changeset version && changeset publish"
+    "publish-packages": "turbo run build && npm run check && changeset version && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",

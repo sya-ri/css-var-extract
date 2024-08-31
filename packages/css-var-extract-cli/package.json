@@ -50,6 +50,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "chokidar": "3.6.0",
     "css-var-extract": "0.1.0",
     "yargs": "17.7.2"
   },

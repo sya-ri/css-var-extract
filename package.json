@@ -41,7 +41,8 @@
   },
   "optionalDependencies": {
     "@biomejs/cli-linux-x64": "1.8.3",
-    "lefthook-linux-x64": "1.7.14"
+    "lefthook-linux-x64": "1.7.14",
+    "@rollup/rollup-linux-x64-gnu": "4.21.2"
   },
   "packageManager": "npm@10.8.2"
 }

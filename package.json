@@ -42,6 +42,7 @@
   "optionalDependencies": {
     "@biomejs/cli-linux-x64": "1.8.3",
     "@rollup/rollup-linux-x64-gnu": "4.21.2",
+    "@rspack/binding-linux-x64-gnu": "0.4.0",
     "lefthook-linux-x64": "1.7.14"
   },
   "packageManager": "npm@10.8.2"

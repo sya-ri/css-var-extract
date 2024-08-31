@@ -39,5 +39,9 @@
     "turbo": "2.1.0",
     "typescript": "5.5.4"
   },
+  "optionalDependencies": {
+    "@biomejs/cli-linux-x64": "1.8.3",
+    "lefthook-linux-x64": "1.7.14"
+  },
   "packageManager": "npm@10.8.2"
 }

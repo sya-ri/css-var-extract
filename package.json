@@ -26,7 +26,8 @@
     "fix:package-json": "sort-package-json 'package.json' 'packages/*/package.json' 'examples/*/package.json'",
     "fix:biome": "biome check --write .",
     "build": "turbo build",
-    "build:clean": "rimraf **[!node_modules]/dist"
+    "build:clean": "rimraf **[!node_modules]/dist",
+    "publish-packages": "turbo run build check && changeset version && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",

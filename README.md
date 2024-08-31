@@ -71,6 +71,7 @@ The plugin will automatically generate .ts through your bundler's dev and build 
 ### Configuration with Vite
 
 - [examples/basic-vite-react](examples/basic-vite-react)
+- [examples/with-vanilla-extract](examples/with-vanilla-extract)
 
 You need to install the `css-var-extract-plugin` package.
 
@@ -97,6 +98,8 @@ export default defineConfig({
 ```
 
 ### Configuration with Rspack/Rsbuild
+
+- [examples/basic-rsbuild-react](examples/basic-rsbuild-react)
 
 You need to install the `css-var-extract-plugin` package.
 
@@ -127,6 +130,8 @@ export default defineConfig({
 ```
 
 ### Configuration with Webpack
+
+- [examples/basic-webpack-react](examples/basic-webpack-react)
 
 You need to install the `css-var-extract-plugin` package.
 

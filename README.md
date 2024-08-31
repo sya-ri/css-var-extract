@@ -213,3 +213,8 @@ If you are using a plugin, it also supports inline configuration.
   ]
 }
 ```
+
+## Acknowledgments
+
+This project was inspired by and references implementation patterns from the [TanStack Router](https://tanstack.com/router) package.
+We extend our gratitude to the developers and maintainers of [TanStack Router](https://tanstack.com/router) for their excellent work.

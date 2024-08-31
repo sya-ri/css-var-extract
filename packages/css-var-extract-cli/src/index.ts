@@ -11,7 +11,7 @@ export function main() {
         .usage("$0 <cmd> [args]")
         .command(
             "generate",
-            "Generate the TypeScript file from CSS files",
+            "Generate the .ts file from CSS files",
             (yargs: yargs.Argv) =>
                 yargs.option("nocreate", {
                     describe: "Disable the creation of a config file",
@@ -21,7 +21,7 @@ export function main() {
         )
         .command(
             "watch",
-            "Continuously watch and generate the TypeScript file from CSS files",
+            "Continuously watch and generate the .ts file from CSS files",
             (yargs: yargs.Argv) =>
                 yargs.option("nocreate", {
                     describe: "Disable the creation of a config file",

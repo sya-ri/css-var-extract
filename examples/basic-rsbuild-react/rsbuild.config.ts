@@ -8,7 +8,7 @@ export default defineConfig({
         rspack: {
             plugins: [
                 CssVarExtractRspack({
-                    directories: ["src/styles/"],
+                    files: ["src/theme.css"],
                 }),
             ],
         },

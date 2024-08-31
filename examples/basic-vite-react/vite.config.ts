@@ -6,7 +6,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     plugins: [
         CssVarExtractVite({
-            directories: ["src/styles/"],
+            files: ["src/theme.css"],
         }),
         react(),
     ],

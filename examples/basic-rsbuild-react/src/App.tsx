@@ -1,5 +1,5 @@
 import "./App.css";
-import "./styles/theme.css";
+import "./theme.css";
 import * as vars from "./cssVar.gen";
 
 const App = () => {

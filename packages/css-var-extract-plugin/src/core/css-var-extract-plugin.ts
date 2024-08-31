@@ -14,9 +14,9 @@ export const unpluginCssVarExtractFactory: UnpluginFactory<
     let root = process.cwd();
     let userConfig = options as Config;
 
-    const getDirectoriesPath = () =>
-        userConfig.directories.map((directory) =>
-            path.isAbsolute(directory) ? directory : path.join(root, directory),
+    const getFilePaths = () =>
+        userConfig.files.map((file) =>
+            path.isAbsolute(file) ? file : path.join(root, file),
         );
 
     const generate = async () => {
@@ -55,11 +55,7 @@ export const unpluginCssVarExtractFactory: UnpluginFactory<
             return;
         }
 
-        if (
-            getDirectoriesPath().some((directory) =>
-                filePath.startsWith(directory),
-            )
-        ) {
+        if (getFilePaths().includes(filePath)) {
             await generate();
         }
     };
@@ -84,9 +80,9 @@ export const unpluginCssVarExtractFactory: UnpluginFactory<
             if (compiler.options.mode === "production") {
                 await generate();
             } else {
-                const directoriesPath = getDirectoriesPath();
+                const filePaths = getFilePaths();
                 const chokidar = await import("chokidar");
-                chokidar.watch(directoriesPath).on("add", async () => {
+                chokidar.watch(filePaths).on("add", async () => {
                     await generate();
                 });
             }
@@ -106,9 +102,9 @@ export const unpluginCssVarExtractFactory: UnpluginFactory<
                     });
                 });
             } else {
-                const directoriesPath = getDirectoriesPath();
+                const filePaths = getFilePaths();
                 const chokidar = await import("chokidar");
-                chokidar.watch(directoriesPath).on("add", async () => {
+                chokidar.watch(filePaths).on("add", async () => {
                     await generate();
                 });
             }

@@ -3,7 +3,7 @@ import * as path from "node:path";
 import { z } from "zod";
 
 export const configSchema = z.object({
-    directories: z.array(z.string()).optional().default([]),
+    files: z.array(z.string()).optional().default([]),
     output: z.string().optional().default("./src/cssVar.gen.ts"),
     fileHeader: z
         .array(z.string())
@@ -52,13 +52,13 @@ export const getConfig = (
 
     if (configDirectory) {
         if (path.isAbsolute(configDirectory)) {
-            config.directories = config.directories.map((directory) =>
-                path.resolve(configDirectory, directory),
+            config.files = config.files.map((file) =>
+                path.resolve(configDirectory, file),
             );
             config.output = path.resolve(configDirectory, config.output);
         } else {
-            config.directories = config.directories.map((directory) =>
-                path.resolve(process.cwd(), configDirectory, directory),
+            config.files = config.files.map((file) =>
+                path.resolve(process.cwd(), configDirectory, file),
             );
             config.output = path.resolve(
                 process.cwd(),

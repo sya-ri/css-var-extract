@@ -1,16 +1,11 @@
 import fs from "node:fs/promises";
-import { glob } from "glob";
 import type { Config } from "./config";
 import { extractCssVars } from "./extractCssVars";
 import { generateCode } from "./generateCode";
 
 export const generator = async (config: Config) => {
-    const files = await Promise.all(
-        config.directories.map((directory) => glob(`${directory}/*.css`)),
-    );
     const cssVars = await Promise.all(
-        files
-            .flat()
+        config.files
             .map((file) => fs.readFile(file, "utf-8"))
             .map((content) => content.then(extractCssVars)),
     );

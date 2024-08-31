@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/sya-ri/css-var-extract.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "sya-ri",
   "type": "module",
   "workspaces": [

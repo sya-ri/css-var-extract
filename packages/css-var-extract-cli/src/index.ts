@@ -1,4 +1,3 @@
-import { generator, getConfig } from "css-var-extract";
 import * as yargs from "yargs";
 import { generate } from "./generate";
 import { watch } from "./watch";

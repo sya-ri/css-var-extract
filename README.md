@@ -1,5 +1,7 @@
 # CSS Var Extract
 
+[![npm version](https://badge.fury.io/js/css-var-extract.svg)](https://badge.fury.io/js/css-var-extract)
+
 Use CSS variables type-safely for CSS-in-JS.
 
 ## 🤔 Why?

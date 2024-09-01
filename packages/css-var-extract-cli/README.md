@@ -152,7 +152,7 @@ export default {
 }
 ```
 
-### Configuration with the TanStack Router CLI
+### Configuration with the CSS Var Extract CLI
 
 You need to install the `css-var-extract-cli` package.
 
@@ -160,7 +160,7 @@ You need to install the `css-var-extract-cli` package.
 npm i -D css-var-extract-cli
 ```
 
-Once installed, you'll need to amend your your scripts in your package.json for the CLI to watch and generate files.
+Once installed, you'll need to amend your scripts in your package.json for the CLI to watch and generate files.
 
 ```json
 {

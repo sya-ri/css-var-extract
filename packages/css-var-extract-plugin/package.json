@@ -1,6 +1,6 @@
 {
   "name": "css-var-extract-plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Use CSS vars type-safely for CSS-in-JS",
   "keywords": [
     "css",
@@ -78,11 +78,11 @@
   },
   "dependencies": {
     "chokidar": "3.6.0",
-    "css-var-extract": "0.1.0",
+    "css-var-extract": "1.0.0",
     "unplugin": "1.12.2"
   },
   "devDependencies": {
-    "css-var-extract-vite-config": "0.1.0",
+    "css-var-extract-vite-config": "1.0.0",
     "vite": "5.4.2"
   },
   "peerDependencies": {

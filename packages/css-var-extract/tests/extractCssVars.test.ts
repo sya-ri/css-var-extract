@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import extractCssVars from "../src/extractCssVars";
+import { extractCssVars } from "../src";
 
 describe("ExtractCssVars", () => {
     it("should be extracted", () => {
         expect(extractCssVars(":root { --primary: #fff }")).toEqual({
             "--primary": {
-                "": "#fff",
+                ":root": "#fff",
             },
         });
     });
@@ -15,10 +15,10 @@ describe("ExtractCssVars", () => {
             extractCssVars(":root { --primary: #fff; --secondary: #000 }"),
         ).toEqual({
             "--primary": {
-                "": "#fff",
+                ":root": "#fff",
             },
             "--secondary": {
-                "": "#000",
+                ":root": "#000",
             },
         });
     });
@@ -30,10 +30,10 @@ describe("ExtractCssVars", () => {
             ),
         ).toEqual({
             "--primary": {
-                "": "#fff",
+                ":root": "#fff",
             },
             "--secondary": {
-                "": "#000",
+                ":root": "#000",
             },
         });
     });
@@ -45,7 +45,7 @@ describe("ExtractCssVars", () => {
             ),
         ).toEqual({
             "--primary": {
-                "": "#fff",
+                ":root": "#fff",
             },
         });
     });
@@ -60,8 +60,8 @@ describe("ExtractCssVars", () => {
             ),
         ).toEqual({
             "--primary": {
-                "": "#000",
-                ".light": "#fff",
+                ":root": "#000",
+                ":root, .light": "#fff",
             },
         });
     });
@@ -69,12 +69,16 @@ describe("ExtractCssVars", () => {
     it("should be extracted even if nested", () => {
         expect(extractCssVars("@media { :root { --primary: #fff } }")).toEqual({
             "--primary": {
-                "": "#fff",
+                ":root": "#fff",
             },
         });
     });
 
-    it("should be ignored non :root", () => {
-        expect(extractCssVars("body { --primary: #fff }")).toEqual({});
+    it("should be extracted non :root", () => {
+        expect(extractCssVars("body { --primary: #fff }")).toEqual({
+            "--primary": {
+                body: "#fff",
+            },
+        });
     });
 });

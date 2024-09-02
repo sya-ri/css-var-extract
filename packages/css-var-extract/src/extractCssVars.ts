@@ -6,7 +6,7 @@ export const extractCssVars = (css: string): CssVars => {
     while (true) {
         const root = rootRegex.exec(css);
         if (!root) break;
-        const condition = root[1]?.trim() ?? "";
+        const condition = root[1]?.trim()?.replace("\n", " ") ?? "";
         if (!root[2]) break;
         const cssVarRegex = /\s*(--[^;]*):([^;]*);?\n*/g;
         while (true) {

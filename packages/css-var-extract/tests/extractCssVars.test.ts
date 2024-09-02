@@ -81,4 +81,16 @@ describe("ExtractCssVars", () => {
             },
         });
     });
+
+    it.each([
+        [[":root,", ".light { --primary: #fff }"]],
+        [[":root, .light", "{ --primary: #fff }"]],
+        [[":root, .light {", " --primary: #fff }"]],
+    ])("should be extracted including line break", (input) => {
+        expect(extractCssVars(input.join("\n"))).toEqual({
+            "--primary": {
+                ":root, .light": "#fff",
+            },
+        });
+    });
 });

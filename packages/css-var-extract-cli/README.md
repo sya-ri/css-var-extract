@@ -4,6 +4,8 @@
 
 Use CSS variables type-safely for CSS-in-JS.
 
+Generate at build time, has **zero runtime dependencies**, and can be **optimized**.
+
 ## 🤔 Why?
 
 Type-safely access CSS variables created by yourself or by external component libraries from TypeScript.

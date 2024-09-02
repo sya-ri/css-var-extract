@@ -19,13 +19,13 @@ Type-safely access CSS variables created by yourself or by external component li
 Automatically generate `.ts` files based on `.css`.
 
 ```ts
-// #d3a3a3
+// :root: #d3a3a3
 export const primary = "var(--primary)"
 
-// #5aa68a
+// :root: #5aa68a
 export const secondary = "var(--secondary)"
 
-// #fff
+// :root: #fff
 export const white = "var(--white)"
 ```
 

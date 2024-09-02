@@ -4,7 +4,7 @@
 
 Use CSS variables type-safely for CSS-in-JS.
 
-Generate at build time, has **zero runtime dependencies**, and can be **optimized**.
+Generate at build time, has **no runtime dependencies**, and can be **optimized**.
 
 ## 🤔 Why?
 

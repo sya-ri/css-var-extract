@@ -239,7 +239,6 @@ The lower the number, the higher the priority.
 | disableLogging | Disable logging on generation.                                        |
 | emoji          | Use emojis in logs.                                                   |
 
-
 ## 👏 Acknowledgments
 
 This project was inspired by and references implementation patterns from the [TanStack Router](https://tanstack.com/router) package.

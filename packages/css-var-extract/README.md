@@ -200,7 +200,17 @@ cve watch
 You can create `cve.config.json` and change settings.
 If you are using a plugin, it also supports inline configuration.
 
-### cve.config.json
+You can also override the settings by the `CVE_CONFIG` environment variable.
+
+### Priority
+
+The lower the number, the higher the priority.
+
+1. Environment variable: `CVE_CONFIG`
+2. Inline config
+3. File config `cve.config.json`
+
+### JSON
 
 ```json
 {
@@ -214,9 +224,20 @@ If you are using a plugin, it also supports inline configuration.
   ],
   "fileFooter": [
     "/* prettier-ignore-end */"
-  ]
+  ],
+  "disableLogging": false,
+  "emoji": true
 }
 ```
+
+| Option         | Description                                                           |
+|----------------|-----------------------------------------------------------------------|
+| files          | CSS files that collects css variables. Set relative or absolute path. |
+| output         | Path to generate the Typescript file. Set relative or absolute path.  |
+| fileHeader     | Header of the generated file.                                         |
+| fileFooter     | Footer of the generated file.                                         |
+| disableLogging | Disable logging on generation.                                        |
+| emoji          | Use emojis in logs.                                                   |
 
 ## 👏 Acknowledgments
 

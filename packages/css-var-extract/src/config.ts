@@ -34,15 +34,21 @@ export const getConfig = (
         "cve.config.json",
     );
     const exists = fs.existsSync(configFilePathJson);
+    const env = process.env.CVE_CONFIG;
+    const envConfig = env ? JSON.parse(env) : {};
 
     let config: Config;
     if (exists) {
         config = configSchema.parse({
             ...JSON.parse(fs.readFileSync(configFilePathJson, "utf-8")),
             ...inlineConfig,
+            ...envConfig,
         });
     } else {
-        config = configSchema.parse(inlineConfig);
+        config = configSchema.parse({
+            ...inlineConfig,
+            ...envConfig,
+        });
         if (!noCreate) {
             fs.writeFileSync(
                 configFilePathJson,

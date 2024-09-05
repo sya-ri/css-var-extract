@@ -200,7 +200,17 @@ cve watch
 You can create `cve.config.json` and change settings.
 If you are using a plugin, it also supports inline configuration.
 
-### cve.config.json
+You can also override the settings by the `CVE_CONFIG` environment variable.
+
+### Priority
+
+The lower the number, the higher the priority.
+
+1. Environment variable: `CVE_CONFIG`
+2. Inline config
+3. File config `cve.config.json`
+
+### JSON
 
 ```json
 {

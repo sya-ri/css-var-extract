@@ -2,13 +2,37 @@ import fs from "node:fs/promises";
 import type { Config } from "./config";
 import { extractCssVars } from "./extractCssVars";
 import { generateCode } from "./generateCode";
+import { logging } from "./utils";
+
+let isFirst = true;
 
 export const generator = async (config: Config) => {
+    const logger = logging({
+        disabled: config.disableLogging,
+        emoji: config.emoji,
+    });
+
+    if (isFirst) {
+        logger.log("Generating css var files...");
+        isFirst = false;
+    } else {
+        logger.log("Regenerating css var files...");
+    }
+
     const cssVars = await Promise.all(
         config.files
             .map((file) => fs.readFile(file, "utf-8"))
             .map((content) => content.then(extractCssVars)),
     );
+
+    if (cssVars.length) {
+        logger.info(`Found css vars: ${cssVars.length}`);
+    } else if (config.files.length) {
+        logger.warn("Not found css vars.");
+    } else {
+        logger.warn("Files options is empty.");
+    }
+
     const code = generateCode(Object.assign({}, ...cssVars));
     await fs.writeFile(
         config.output,

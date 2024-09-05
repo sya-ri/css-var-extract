@@ -214,9 +214,21 @@ If you are using a plugin, it also supports inline configuration.
   ],
   "fileFooter": [
     "/* prettier-ignore-end */"
-  ]
+  ],
+  "disableLogging": false,
+  "emoji": true
 }
 ```
+
+| Option         | Description                                                           |
+|----------------|-----------------------------------------------------------------------|
+| files          | CSS files that collects css variables. Set relative or absolute path. |
+| output         | Path to generate the Typescript file. Set relative or absolute path.  |
+| fileHeader     | Header of the generated file.                                         |
+| fileFooter     | Footer of the generated file.                                         |
+| disableLogging | Disable logging on generation.                                        |
+| emoji          | Use emojis in logs.                                                   |
+
 
 ## 👏 Acknowledgments
 

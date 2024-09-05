@@ -18,6 +18,8 @@ export const configSchema = z.object({
         .array(z.string())
         .optional()
         .default(["/* prettier-ignore-end */"]),
+    disableLogging: z.boolean().optional().default(false),
+    emoji: z.boolean().optional().default(true),
 });
 
 export type Config = z.infer<typeof configSchema>;

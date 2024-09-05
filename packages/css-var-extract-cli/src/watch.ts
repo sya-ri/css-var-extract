@@ -10,7 +10,7 @@ export const watch = async (nocreate?: boolean) => {
     let watcher = new chokidar.FSWatcher({});
 
     const generatorWatcher = () => {
-        const config = getConfig();
+        const config = getConfig(nocreate);
 
         watcher.close();
 

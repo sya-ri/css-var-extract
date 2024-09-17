@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "css-var-extract-vite-config": "1.0.0",
-    "vite": "5.4.2",
+    "vite": "5.4.6",
     "vitest": "2.0.5"
   }
 }
